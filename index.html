@@ -1,0 +1,229 @@
+
+
+
+
+
+<style media="screen">
+  #map {
+    height: 400%;
+    width: 100%
+  }
+</style>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Google Map</title>
+    <style media="screen">
+      #map{
+        height:400px;
+        width:100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Google Map</h1>
+    <div id="map"></div>
+    <script>
+      let map;
+
+      function initMap() {
+        //map options
+         var options = {
+        center: { lat:19.7515 , lng:75.7139},
+        zoom: 6,
+      }
+       //new map
+         var map = new google.maps.Map(document.getElementById("map"),options);
+       /*
+         // add marker
+         var marker = new google.maps.Marker({
+           position:{lat:19.9975, lng:73.7898},
+           map:map
+         });
+
+       var infoWindow = new google.maps.InfoWindow({
+         content:'<h4>Nashik,lat:19.9975  lng:73.7898</h4>',
+
+
+       });
+          marker.addListener('mouseover',function(){
+            infoWindow.open(map,marker);
+          });
+         */
+
+          addMarker({
+            coords:{lat:19.9975,lng:73.7898},
+            content:'<h1>Nashik,lat:19.9975,lng:73.7898 </h1>'
+          });
+          addMarker({
+            coords:{lat:19.8762,lng:75.3433},
+            content:'<h1>Aurangabad, lat:19.8762,lng:75.3433 </h1>'
+          });
+          addMarker({
+            coords:{lat:18.5204,lng:73.8567},
+            content:'<h1>Pune, lat:18.5204,lng:73.8567</h1> '
+          });
+          addMarker({
+            coords:{lat:16.8524,lng:74.5815},
+            content:'<h1>Sangli, lat:16.8524,lng:74.5815</h1> '
+          });
+          addMarker({
+            coords:{lat:20.7002,lng:77.0082},
+            content:'<h1>Akola, lat:20.7002,lng:77.0082 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.0948,lng:74.7480},
+            content:'<h1>Ahmednagar, lat:19.0948,lng:74.7480 </h1> '
+          });
+          addMarker({
+            coords:{lat:18.9901,lng:75.7531},
+            content:'<h1>Beed,lat:18.9901,lng:75.7531 </h1> '
+          });
+          addMarker({
+            coords:{lat:21.1777,lng:79.6570},
+            content:'<h1>Bhandara,lat:21.1777,lng:79.6570 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.9615,lng:79.2961},
+            content:'<h1>Chandrapur, lat:19.9615,lng:79.2961 </h1> '
+          });
+          addMarker({
+            coords:{lat:20.9042,lng:74.7749},
+            content:'<h1>Dhule, lat:20.9042,lng:74.7749 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.4969,lng:80.2767},
+            content:'<h1>Gadchiroli, lat:19.4969,lng:80.2767 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.7174,lng: 77.1494},
+            content:'<h1>Hingoli,lat:19.7174,lng: 77.1494 </h1> '
+          });
+          addMarker({
+            coords:{lat:21.0077,lng: 75.5626},
+            content:'<h1>Jalgaon, lat:21.0077,lng: 75.5626 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.8347,lng:75.8816},
+            content:'<h1>Jalna, lat:19.8347,lng:75.8816 </h1> '
+          });
+          addMarker({
+            coords:{lat:16.7050,lng:74.2433},
+            content:'<h1>Kolhapur, lat:16.7050,lng:74.2433 </h1> '
+          });
+          addMarker({
+            coords:{lat:18.4088,lng:76.5604},
+            content:'<h1>Latur, lat:18.4088,lng:76.5604 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.1538,lng:72.8752},
+            content:'<h1>Mumbai Surburban, lat:19.1538,lng:72.8752 </h1> '
+          });
+          addMarker({
+            coords:{lat:21.1458,lng:79.0882},
+            content:'<h1>Nagpur, lat:21.1458,lng:79.0882 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.1383,lng:77.3210},
+            content:'<h1>Nanded, lat:19.1383,lng:77.3210 </h1> '
+          });
+          addMarker({
+            coords:{lat:18.1853,lng:76.0420},
+            content:'<h1>Osmanabad, lat:18.1853,lng:76.0420 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.6967,lng:72.7699},
+            content:'<h1>Palghar, lat:19.6967,lng:72.7699 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.2608,lng:76.7748},
+            content:'<h1>Parbhani, lat:19.2608,lng:76.7748 </h1> '
+          });
+          addMarker({
+            coords:{lat:18.5158,lng: 73.1822},
+            content:'<h1>Raigad, lat:18.5158,lng: 73.1822 </h1> '
+          });
+          addMarker({
+            coords:{lat:16.9902,lng:73.3120},
+            content:'<h1>Ratnagiri, lat:16.9902,lng:73.3120 </h1> '
+          });
+          addMarker({
+            coords:{lat:17.6805,lng:74.0183},
+            content:'<h1>Satara, lat:17.6805,lng:74.0183 </h1> '
+          });
+          addMarker({
+            coords:{lat:16.3492,lng:73.5594},
+            content:'<h1>Sindhudurg, lat:16.3492,lng:73.5594 </h1> '
+          });
+          addMarker({
+            coords:{lat:17.6599,lng: 75.9064},
+            content:'<h1>Solapur, lat:17.6599,lng: 75.9064 </h1> '
+          });
+          addMarker({
+            coords:{lat:19.2183,lng: 72.9781},
+            content:'<h1>Thane, lat:19.2183,lng: 72.9781 </h1> '
+          });
+          addMarker({
+            coords:{lat:20.7453,lng:78.6022},
+            content:'<h1>Wardha, lat:20.7453,lng:78.6022 </h1> '
+          });
+          addMarker({
+            coords:{lat:20.1119,lng:77.1313},
+            content:'<h1>Washim, lat:20.1119,lng:77.1313 </h1> '
+          });
+          addMarker({
+            coords:{lat:20.3899,lng: 78.1307},
+            content:'<h1>Yavatmal, lat:20.3899,lng: 78.1307 </h1> '
+          });
+          /*
+          addMarker({
+            coords:{lat:16.8524,lng:74.5815},
+            content:'<h1>Sangli, lat:16.8524,lng:74.5815</h1> '
+          });
+          addMarker({
+            coords:{lat:16.8524,lng:74.5815},
+            content:'<h1>Sangli, lat:16.8524,lng:74.5815</h1> '
+          });
+          addMarker({
+            coords:{lat:16.8524,lng:74.5815},
+            content:'<h1>Sangli, lat:16.8524,lng:74.5815</h1> '
+          });*/
+        // add marker function
+        function addMarker(props){
+          var marker = new google.maps.Marker({
+            position:props.coords,
+            map:map
+          });
+
+          if(props.content){
+            var infoWindow = new google.maps.InfoWindow({
+              content:props.content
+
+
+            });
+               marker.addListener('click',function(){
+                 infoWindow.open(map,marker);
+               });
+          }
+        }
+      }
+
+
+    </script>
+
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEAZ3Kam-Y-V0LF9s_0SQvJ3oRvOCZ978&callback=initMap&libraries=&v=weekly">
+    </script>
+  </body>
+</html>
